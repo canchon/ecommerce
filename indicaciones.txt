@@ -1,0 +1,18 @@
+Crear web que contenga back en PHP bases de datos en MySql front con JS, HTML y CS3 Ecommerse.
+
+La web tiene que tener una vitrina que muestre los productos que tiene la tienda, 
+estos productos tiene que ser consultados desde base de datos con PHP sin insertar PHP en el JS, 
+debe tener un botón que no dirija a un formulario donde se puedan crear estos items de venta con:
+    su titulo descripcion, categoria, imagenes y precio.
+
+desde el back debe poder subir imagenes al servidor para poder usarlas en la vitrina, 
+las categorias deben estar en una tabla aparte en base de datos para poder hacer realizaciones
+con la tabla de items
+
+al momento de seleccionar un item quiero que me abra el item en una pestaña parte con toda la informacion y
+poder subarle gastos de envio ingresados manual mente en un input y poner otro input para poder agregar un % de
+descuento
+
+en la pestaña de crear items de venta quiero poder actualizar los items existentes
+
+en la pestaña de crear quiero tener un buscador que me busque por nombre del item (titulo)

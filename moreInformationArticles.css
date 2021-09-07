@@ -1,0 +1,36 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color:lightslategrey ;
+    align-items: center;
+}
+.cabecera{
+    width: 100%;
+    border:maroon solid 1px;
+    height: 9rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cabecera--img{
+    border:maroon solid 1px;
+    /* height: 700px; */
+}
+.imgPrincipal{
+    border:maroon solid 1px;
+    width: 70%;
+    height: 600px;
+}
+.information{
+    border:maroon solid 1px;
+    width: 100%;
+    height: 400px;
+}
+.toPay{
+    border:maroon solid 1px;
+}
+.footer{
+    border:maroon solid 1px;
+}

@@ -1,0 +1,14 @@
+{
+  "name": "ecomer",
+  "version": "1.0.0",
+  "description": "Una página web de venta de productos completa, funcional, bella y óptima.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Ecomer"
+  ],
+  "author": "David Canchón",
+  "license": "MIT"
+}
