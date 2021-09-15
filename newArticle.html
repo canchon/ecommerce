@@ -5,20 +5,22 @@
     <link rel="stylesheet" href="./newArticle.css">
 </head>
 <body>
+    <script defer src="./sentData.js" ></script>
     <header class="header">cosas que van en la cabecera</header>
         <div class="principal">
             <section class="container">
-                <form action="" id="form">
+                <form action="http://localhost/Aprendiendo%20A%20Crear%20API/propio/index.php" method="POST" id="form">
                     <label for="title">pon aqui el título</label>
-                    <input id="title" type="text">
+                    <input name="title" id="title" type="text">
                     <label for="description">agrega una Descripción</label>
-                    <input type="text" id="description">
-                    <label for="categories">agrega una categoria</label>
-                    <input type="text" id="categories">
+                    <input name="description" type="text" id="description">
+                    <label for="categorie">agrega una categoria</label>
+                    <input name="categorie" type="text" id="categorie">
                     <label for="img">agrega una imagen</label>
-                    <input type="file" name="" id="">
+                    <input name="img" type="file" name="" id="">
                     <label for="price">¿Cuál es el precio?</label>
-                    <input type="number">
+                    <input name="price" type="number">
+                    <input type="submit" formtarget="_blank" >
                 </form>
             </section>
             <div class="principal--modify">
