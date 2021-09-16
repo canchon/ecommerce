@@ -26,7 +26,7 @@ function makeItems(object){
             <h3 class='shelf__item--title' id='title' >${element['title']} </h3>
             <p class=shelf__item--description' id='description' >${element['description']}</p>
             <p  class='shelf__item--categorie' id='categorie' >${element['categorie']}</p>
-            <p><img  class='shelf__item--img' id='img' src='data:image/png;base64,${element['img']}' alt='imagen descriptiva del producto.'> La imagen se sube desde pc mediante un botón. </p>   
+            <p><img  class='shelf__item--img' id='img' src='data:image/png;base64,${element['img_principal']}' alt='imagen descriptiva del producto.'> La imagen se sube desde pc mediante un botón. </p>   
             <p class='shelf__item--price' >${element['price']}</p>
         </div>`
     }
