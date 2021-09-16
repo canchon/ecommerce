@@ -9,7 +9,7 @@
     <header class="header">cosas que van en la cabecera</header>
         <div class="principal">
             <section class="container">
-                <form action="http://localhost/Aprendiendo%20A%20Crear%20API/propio/index.php" method="POST" id="form">
+                <form action="http://localhost/Aprendiendo%20A%20Crear%20API/propio/index.php" method="POST" enctype="multipart/form-data" id="form">
                     <label for="title">pon aqui el título</label>
                     <input name="title" id="title" type="text">
                     <label for="description">agrega una Descripción</label>
@@ -17,7 +17,13 @@
                     <label for="categorie">agrega una categoria</label>
                     <input name="categorie" type="text" id="categorie">
                     <label for="img">agrega una imagen</label>
-                    <input name="img" type="file" name="" id="">
+                    <!-- <div>
+                        <input name="imgone" type="text">
+                        <input name="img2" type="text">
+                        <input name="img3" type="text">
+
+                    </div> -->
+                    <input name="img" type="file" id="img">
                     <label for="price">¿Cuál es el precio?</label>
                     <input name="price" type="number">
                     <input type="submit" formtarget="_blank" >
