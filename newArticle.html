@@ -1,48 +1,104 @@
 <!DOCTYPE html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset='UTF-8'>
     <title>Ingresa un nuevo artículo</title>
-    <link rel="stylesheet" href="./newArticle.css">
+    <link rel='stylesheet' href='./newArticle.css'>
 </head>
 <body>
-    <script defer src="./sentData.js" ></script>
-    <header class="header">cosas que van en la cabecera</header>
-        <div class="principal">
-            <section class="container">
-                <form action="http://localhost/Aprendiendo%20A%20Crear%20API/propio/index.php" method="POST" enctype="multipart/form-data" id="form">
-                    <label for="title">pon aqui el título</label>
-                    <input name="title" id="title" type="text">
-                    <label for="description">agrega una Descripción</label>
-                    <input name="description" type="text" id="description">
-                    <label for="categorie">agrega una categoria</label>
-                    <input name="categorie" type="text" id="categorie">
-                    <label for="price">¿Cuál es el precio?</label>
-                    <input name="price" type="number">
-                    <div class="container--img" >
-                        <label for="img_principal">imagen principal</label>
-                        <input name="img_principal" type="file" >
-                        <label for="img_principal">imagen arriba</label>
-                        <input name="img_top" type="file" >
-                        <label for="img_principal">imagen derecha</label>
-                        <input name="img_right" type="file" >
-                        <label for="img_principal">imagen abajo</label>
-                        <input name="img_bottom" type="file" >
-                        <label for="img_principal">imagen izquierda</label>
-                        <input name="img_left" type="file" >
+    <script defer src='./newArticle.js' ></script>
+    <header class='header'>cosas que van en la cabecera</header>
+        <div class='principal'>
+            <section class='container'>
+                <form action='http://localhost/Aprendiendo%20A%20Crear%20API/propio/index.php' method='POST' enctype='multipart/form-data' id='form'>
+                    <label for='title'>pon aqui el título</label>
+                    <input name='title' id='title' type='text'>
+                    <label for='description'>agrega una Descripción</label>
+                    <input name='description' type='text' id='description'>
+                    <label for='categorie'>agrega una categoria</label>
+                    <input name='categorie' type='text' id='categorie'>
+                    <label for='price'>¿Cuál es el precio?</label>
+                    <input name='price' type='number'>
+                    <div class='container--img' >
+                        <label for='img_principal'>imagen principal</label>
+                        <input name='img_principal' type='file' >
+                        <label for='img_principal'>imagen arriba</label>
+                        <input name='img_top' type='file' >
+                        <label for='img_principal'>imagen derecha</label>
+                        <input name='img_right' type='file' >
+                        <label for='img_principal'>imagen abajo</label>
+                        <input name='img_bottom' type='file' >
+                        <label for='img_principal'>imagen izquierda</label>
+                        <input name='img_left' type='file' >
                     </div>
-                    <input type="submit" formtarget="_blank" >
+                    <input type='submit' formtarget='_blank' >
                 </form>
             </section>
-            <div class="principal--modify">
+            <div class='principal--modify'>
                 <h4>Modificar artículos</h4>
-                <label for="search">Busca el articulo a modificar:</label>
-                <input id="search" type="search">
-                <lu>
-                   <li>One</li> 
-                   <li>two</li>
-                </lu>
+                <label for='search'>Busca el articulo a modificar:</label>
+                <input id='search' type='search' placeholder='Título'>
+                <button onclick='search()' >Buscar</button>
+                <div class='principal__modify--response' >
+                    aqui va la respuesta
+                </div>
+
+                <!-- <div class='principal__modify--change' >
+                    
+                    <form action='http://localhost/Aprendiendo%20A%20Crear%20API/propio/index.php' method='PUT' enctype='multipart/form-data'>
+                        <div class='principal__modify__change--item'>
+                            <label for='title'>Título</label>
+                            <p>${element.title}</p>
+                            <input name='title' type='text'>
+                        </div>
+                        <div class='principal__modify__change--item'>
+                            <label for='description'>Descripción</label>
+                            <p>${element.description}</p>
+                            <input name='description' type='text'>
+                        </div>
+                        <div class='principal__modify__change--item'>
+                            <label for='categorie'>Categoria</label>
+                            <p>${element.categorie}</p>
+                            <input name='categorie' type='text'>
+                        </div>
+                        <div class='principal__modify__change--item'>
+                            <label for='price'>Precio</label>
+                            <p>${element.price}</p>
+                            <input name='price' type='number'>
+                        </div>
+                                            
+                        <div class='container--img' >
+                            <div class='principal__modify__change--item'>
+                                <label for='img_principal'>Imagen principal</label>
+                                <img src='data:image/png;base64,${element.img_principal}' alt=''>
+                                <input name='img_principal' type='file' >
+                            </div>
+                            <div class='principal__modify__change--item'>
+                                <label for='img_principal'>Imagen arriba</label>
+                                <img src='data:image/png;base64,${element.img_top}' alt=''>
+                                <input name='img_top' type='file' >
+                            </div>
+                            <div class='principal__modify__change--item'>
+                                <label for='img_principal'>Imagen derecha</label>
+                                <img src='data:image/png;base64,${element.img_right}' alt=''>
+                                <input name='img_right' type='file' >
+                            </div>
+                            <div class='principal__modify__change--item'>
+                                <label for='img_principal'>Imagen abajo</label>
+                                <img src='data:image/png;base64,${element.img_bottom}' alt=''>
+                                <input name='img_bottom' type='file' >
+                            </div>
+                            <div class='principal__modify__change--item'>
+                                <label for='img_principal'>imagen izquierda</label>
+                                <img src='data:image/png;base64,${element.img_left}' alt=''>
+                                <input name='img_left' type='file' >
+                            </div>
+                        </div>
+                        <input type='submit' formtarget='_blank' >
+                    </form>
+                </div> -->
+
             </div>
         </div>
-    <footer class="footer">cosas que van abajo</footer>
+    <footer class='footer'>cosas que van abajo</footer>
 </body>
 </html>
