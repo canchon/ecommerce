@@ -9,7 +9,7 @@
     <header class='header'>cosas que van en la cabecera</header>
         <div class='principal'>
             <section class='container'>
-                <form action='http://localhost/Aprendiendo%20A%20Crear%20API/propio/index.php' method='POST' enctype='multipart/form-data' id='form'>
+                <form action='http://localhost/Aprendiendo%20A%20Crear%20API/propio/index.php' method='post' enctype='multipart/form-data' id='form'>
                     <label for='title'>pon aqui el título</label>
                     <input name='title' id='title' type='text'>
                     <label for='description'>agrega una Descripción</label>
@@ -42,61 +42,74 @@
                     aqui va la respuesta
                 </div>
 
-                <!-- <div class='principal__modify--change' >
-                    
-                    <form action='http://localhost/Aprendiendo%20A%20Crear%20API/propio/index.php' method='PUT' enctype='multipart/form-data'>
+            </div>
+                <!-- <div class="principal__modify__response--container" >
+                    <div class='principal__modify__change--item'>
+                        <label for='title'>Título:</label>
+                        <p>${object.title}</p>
+                        <input name='title' type='text' placeholder="Escribe el nuevo título">
+                        <input type="button" value="Modificar" onclick="upDate()">
+                        <p id="response" ></p>
+                    </div>
+                    <div class='principal__modify__change--item'>
+                        <label for='description'>Descripción:</label>
+                        <p>${object.description}</p>
+                        <input name='description' type='text'>
+                        </div><input name='title' type='text' placeholder="Escribe la nueva descripción">
+                        <input type="button" value="Modificar" onclick="upDate()">
+                        <p id="response" ></p>
+                    <div class='principal__modify__change--item'>
+                        <label for='categorie'>Categoria:</label>
+                        <p>${object.categorie}</p>
+                        <input name='categorie' type='text'>
+                        </div><input name='title' type='text' placeholder="Escribe la nueva categoria">
+                        <input type="button" value="Modificar" onclick="upDate()">
+                        <p id="response" ></p>
+                    <div class='principal__modify__change--item'>
+                        <label for='price'>Precio:</label>
+                        <p>${object.price}</p>
+                        <input name='price' type='number'>
+                        <input name='title' type='text' placeholder="Escribe el nuevo precio">
+                        <input type="button" value="Modificar" onclick="upDate()">
+                        <p id="response" ></p>
+                    </div>
+                    <div class='container--img' >
                         <div class='principal__modify__change--item'>
-                            <label for='title'>Título</label>
-                            <p>${element.title}</p>
-                            <input name='title' type='text'>
+                            <label for='img_principal'>Imagen principal:</label>
+                            <img src='data:image/png;base64,${object.img_principal}' alt=''>
+                            <input name='img_principal' type='file' name="hola">
+                            <input type="button" value="Modificar" onclick="upDate()">
+                            <p id="response" ></p></div>
+                        <div class='principal__modify__change--item'>
+                            <label for='img_principal'>Imagen arriba:</label>
+                            <img src='data:image/png;base64,${object.img_top}' alt=''>
+                            <input name='img_top' type='file' >
+                            <input type="button" value="Modificar" onclick="upDate()">
+                            <p id="response" ></p>
                         </div>
                         <div class='principal__modify__change--item'>
-                            <label for='description'>Descripción</label>
-                            <p>${element.description}</p>
-                            <input name='description' type='text'>
+                            <label for='img_principal'>Imagen derecha:</label>
+                            <img src='data:image/png;base64,${object.img_right}' alt=''>
+                            <input name='img_right' type='file' >
+                            <input type="button" value="Modificar" onclick="upDate()">
+                            <p id="response" ></p>
                         </div>
                         <div class='principal__modify__change--item'>
-                            <label for='categorie'>Categoria</label>
-                            <p>${element.categorie}</p>
-                            <input name='categorie' type='text'>
+                            <label for='img_principal'>Imagen abajo:</label>
+                            <img src='data:image/png;base64,${object.img_bottom}' alt=''>
+                            <input name='img_bottom' type='file' >
+                            <input type="button" value="Modificar" onclick="upDate()">
+                            <p id="response" ></p>
                         </div>
                         <div class='principal__modify__change--item'>
-                            <label for='price'>Precio</label>
-                            <p>${element.price}</p>
-                            <input name='price' type='number'>
+                            <label for='img_principal'>imagen izquierda:</label>
+                            <img src='data:image/png;base64,${object.img_left}' alt=''>
+                            <input name='img_left' type='file' >
+                            <input type="button" value="Modificar" onclick="upDate()">
+                            <p id="response" ></p>
                         </div>
-                                            
-                        <div class='container--img' >
-                            <div class='principal__modify__change--item'>
-                                <label for='img_principal'>Imagen principal</label>
-                                <img src='data:image/png;base64,${element.img_principal}' alt=''>
-                                <input name='img_principal' type='file' >
-                            </div>
-                            <div class='principal__modify__change--item'>
-                                <label for='img_principal'>Imagen arriba</label>
-                                <img src='data:image/png;base64,${element.img_top}' alt=''>
-                                <input name='img_top' type='file' >
-                            </div>
-                            <div class='principal__modify__change--item'>
-                                <label for='img_principal'>Imagen derecha</label>
-                                <img src='data:image/png;base64,${element.img_right}' alt=''>
-                                <input name='img_right' type='file' >
-                            </div>
-                            <div class='principal__modify__change--item'>
-                                <label for='img_principal'>Imagen abajo</label>
-                                <img src='data:image/png;base64,${element.img_bottom}' alt=''>
-                                <input name='img_bottom' type='file' >
-                            </div>
-                            <div class='principal__modify__change--item'>
-                                <label for='img_principal'>imagen izquierda</label>
-                                <img src='data:image/png;base64,${element.img_left}' alt=''>
-                                <input name='img_left' type='file' >
-                            </div>
-                        </div>
-                        <input type='submit' formtarget='_blank' >
-                    </form>
+                    </div>
                 </div> -->
-
             </div>
         </div>
     <footer class='footer'>cosas que van abajo</footer>

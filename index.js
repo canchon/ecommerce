@@ -2,7 +2,7 @@ const fetchData = () => {
 
     return new Promise( (resolve, reject) =>{
         
-        const url = "http://localhost/Aprendiendo%20A%20Crear%20API/propio/articlesApi.php"
+        const url = "http://localhost/Aprendiendo%20A%20Crear%20API/propio/index.php"
         const connection = new XMLHttpRequest()
         connection.open('get',url, true)
         connection.onreadystatechange = function(){
@@ -38,11 +38,11 @@ function makeItems(object){
         const response = await fetchData()
         makeItems(JSON.parse(response))
         // makeItems(response)
-        // console.log(JSON.parse(response))
+        // console.log(response)
         // console.log(JSON.parse(response))
     }
     catch (error){
         console.log("trycath")
-        console.log(error)
+        console.error(error)
     }
 })()
