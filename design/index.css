@@ -1,0 +1,112 @@
+#home{ /* la página actual esté de color verde en el menú */
+  
+  color: #2de233;
+}
+body {
+  /* background-image: url("../src/playa.jpg"); */
+  background-color: lightgrey;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.principal {
+  /* background-color: #f0e2a3; */
+  display: flex;
+  height: 53rem;
+  border: solid green 1px;
+  overflow: hidden;
+  /* overflow: scroll; */
+}
+
+.left {
+
+  opacity: 0.9;
+  text-align: start;
+  background-color: white;
+  width: 20%;
+  margin: 15px 10px 15px 35px;
+  border: none;
+  padding: 15px;
+  box-shadow: 0px 0px 40px -24px;
+}
+
+.shelf {
+  width: 80%;
+  margin: 15px 35px 15px 5px;
+  border: none;
+  box-shadow: 0px 0px 40px -24px;
+  background-color: white;
+  opacity: 0.9;
+  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: baseline;
+  padding: 15px;    
+}
+
+.shelf--item {
+  background-color: transparent;
+  box-shadow: lightgray;
+  border: lightgray solid 1px;
+  /* border: 0; */
+  border-radius: 3px;
+  width: 250px;
+  height: 400px;
+  margin-bottom: 15px;
+  /* margin: 0px 10px 10px 10px; */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.shelf--item:hover{
+
+    box-shadow: 0px 0px 15px 2px ;
+}
+
+.shelf__item--img {
+  height: 70%;
+  width: 100%;
+  object-fit: cover;
+  /* overflow: hidden; */
+}
+
+.shelf__item--phrase {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  border: 0;
+
+  height: 30%;
+  margin: 4px 0px;
+}
+
+.shelf__item--phrase > p {
+  margin: 4px 0px;
+}
+
+.shelf__item--phrase > h3 {
+  margin: 4px 0px;
+}
+
+#details {
+
+  letter-spacing: 2px;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 2px;
+  background-color: #2de233 ;
+  margin: 4px 0px;
+}
+#details:hover{
+ 
+  cursor: pointer;
+}

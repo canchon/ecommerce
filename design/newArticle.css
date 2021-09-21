@@ -1,3 +1,7 @@
+#modify{ /* la página actual esté de color verde en el menú */
+
+    color: #2de233;
+}
 body{
     display: flex;
     flex-direction: column;

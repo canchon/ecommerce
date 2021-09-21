@@ -1,0 +1,96 @@
+$sizeItem: 23%;
+$sizeHeight: $sizeItem*2;
+
+body {
+    background-image: url("./playa.jpg");
+    margin: 0;
+    border: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    background-color: #d78521;
+    width: 100%;
+    height: 7rem;
+    /* border: solid green 1px; */
+  }
+  
+  .principal {
+    /* background-color: #664e4c; */
+    display: flex;
+    height: 40rem;
+    border: solid green 1px;
+    overflow: hidden;
+    /* overflow: scroll; */
+  }
+  
+  .left {
+    background-color: #664e4c;
+    border: solid green 1px;
+    width: 20%;
+    margin: 15px 10px 15px 35px;
+    border: none;
+    box-shadow: 0px 0px 40px -24px;
+  }
+  
+  .shelf{
+    width: 80%;
+    margin: 15px 35px 15px 5px;
+    border: none;
+    box-shadow: 0px 0px 40px -24px;
+    background-color: #664e4c;
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+  }
+  
+  .shelf--item {
+    background-color: #664e4c;
+    border: solid green 1px;
+    width: $sizeItem;
+    height: $sizeHeight;
+    margin-top: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .shelf__item--img {
+      height: 75%;
+    width: 100%;
+    object-fit: fill;
+    /* overflow: hidden; */
+  }
+  .shelf__item--phrase{
+    border: solid green 1px;
+      
+      height: 35%;
+      margin: 4px 0px;
+  }
+  .shelf__item--phrase > p{
+  
+      margin: 4px 0px;
+  }
+  .shelf__item--phrase > h3{
+  
+      margin: 4px 0px;
+  }
+  #details{
+  
+      margin: 4px 0   px;
+  }
+  
+  
+  .footer {
+    width: 100%;
+    height: 7rem;
+    background-color: #664e4c;
+  }
+  
+  /*# sourceMappingURL=index.css.map */
+  

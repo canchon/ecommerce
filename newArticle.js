@@ -117,12 +117,12 @@ function writeHtml(array){
     }
 }
 
-function upDate(id){
+function upDate(feature){
     
     //obtener la caracteristica y su valor a modificar
-    const inputChangeValue = document.querySelector(`#modify_${id}`).value
-    const pValue = document.querySelector(`#show--${id}`).innerText
-    // showResponse(`${inputChangeValue} -- ${id}`)
+    const inputChangeValue = document.querySelector(`#modify_${feature}`).value
+    const pValue = document.querySelector(`#show--${feature}`).innerText
+    // showResponse(`${inputChangeValue} -- ${feature}`)
 
     //enviar la peticion al servidor y obtener una respuesta
     function upDateApi(){
@@ -131,7 +131,7 @@ function upDate(id){
             
             const url = "http://localhost/Aprendiendo%20A%20Crear%20API/propio/modify.php"
             let data = new FormData()
-            data.append('feature', id)
+            data.append('feature', feature)
             data.append('featureOriginal', `${pValue}`)
             data.append('featureChange', `${inputChangeValue}`)
             const req = new XMLHttpRequest()
@@ -152,6 +152,7 @@ function upDate(id){
             setTimeout( () => {
                 
                 //notificarle al cliente el éxito de la operación.
+                console.log(response)
                 search() ,1500 
             })
         })
