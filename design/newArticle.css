@@ -5,6 +5,7 @@
 body{
     
     background-image: url("../src/playa.jpg");
+    background-size: cover;
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -16,4 +17,8 @@ body{
     height: 49rem;
     display: flex;
     overflow: hidden;
+}
+#id_element{
+
+    display: none;
 }

@@ -14,7 +14,8 @@
 }
 .principal__modify__response--container{
 
-    border: blue solid 1px;
+    border: lightgray solid 1px;
+    border-radius: 2px;
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -27,7 +28,7 @@
     align-items: center;
     width: 95%;
     height: 100px;
-    border: red solid 1px;
+    /* border: red solid 1px; */
 }
 
 .feature{
@@ -47,7 +48,6 @@
     border: lightgray solid 1px;
     width: 250px;
     height: 30px;
-
 }
 .input{
     
@@ -92,4 +92,59 @@
     border-radius: 2px;
     background-color: #2de233 ;
     margin: 0px 5px;
+}
+.image{
+
+    width: 120px!important;
+    height: 90px;
+    margin: 0px 35px 0px 10px;
+    transition: 500ms;
+    border: lightgray solid 1px;
+    object-fit: cover;
+}
+.container--img{ /*form*/
+
+    width: 80%;
+    /* border: gold solid 1px; */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.input_file{
+
+    /* color: transparent; */
+    text-align: end;
+    transition: 500ms;
+    border: lightgray solid  1px;
+    border-radius: 2px;
+    width: 300px;
+    height: 30px;
+    cursor: pointer;
+}
+.input_file::-webkit-file-upload-button {
+    
+    visibility: hidden;
+}
+.input_file::before{
+    
+    margin: 0;
+    /* margin: 6px 1px 0px 60px; */
+    /* position: absolute!important; */
+    /* content: 'Subir'; */
+    color: black;
+    letter-spacing: 1px;
+    transition: 500ms;
+}
+.input_file:hover{
+
+    background-color: #2de233 ;
+}
+.input_file::selection{
+
+    background-color: #2de233 ;
+
 }

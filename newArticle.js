@@ -42,78 +42,12 @@ const search = async() =>{
     }
 } 
 
+
 function writeHtml(array){
     
     let modificarHtml
     for (const object of array) {
         
-        // modificarHtml += `
-        // <div class="principal__modify__response--container" >
-        //     <div class='principal__modify__change--item'>
-        //         <label for='title'>Título:</label>
-        //         <p id="show--title" >${object.title}</p>
-        //         <input id='modify_title' type='text' placeholder="Escribe el nuevo título">
-        //         <input type="button" value="Modificar" onclick="upDate('title')">
-        //         <p id="response" ></p>
-        //     </div>
-        //     <div class='principal__modify__change--item'>
-        //         <label for='description'>Descripción:</label>
-        //         <p id="show--description" >${object.description}</p>
-        //         </div><input id='modify_description' type='text' placeholder="Escribe la nueva descripción">
-        //         <input type="button" value="Modificar" onclick="upDate('description')">
-        //         <p id="response" ></p>
-        //     <div class='principal__modify__change--item'>
-        //         <label for='categorie'>Categoria:</label>
-        //         <p id="show--categorie" >${object.categorie}</p>
-        //         </div><input id='modify_categorie' type='text' placeholder="Escribe la nueva categoria">
-        //         <input type="button" value="Modificar" onclick="upDate('categorie')">
-        //         <p id="response" ></p>
-        //     <div class='principal__modify__change--item'>
-        //         <label for='price'>Precio:</label>
-        //         <p id="show--price" >${object.price}</p>
-        //         <input id='modify_price' type='number' placeholder="Escribe el nuevo precio">
-        //         <input type="button" value="Modificar" onclick="upDate('price')">
-        //         <p id="response" ></p>
-        //     </div>
-        //     <div class='principal__modify__change--item'>
-        //     <form class='container--img' target="_blank" action="http://localhost/Aprendiendo%20A%20Crear%20API/propio/modifyImg.php" method="post" enctype='multipart/form-data' >
-        //             <label for='img_principal'>Imagen principal:</label>
-        //             // <img src='data:image/png;base64,${object.img_principal}' alt=''>
-        //             <input name='img_principal' type='file' >
-        //             <p id="response" ></p></div>
-        //         <div class='principal__modify__change--item'>
-        //             <label for='img_principal'>Imagen arriba:</label>
-        //             <img src='data:image/png;base64,${object.img_top}' alt=''>
-        //             <input name='img_top' type='file' >
-        //             <p id="response" ></p>
-        //         </div>
-        //         <div class='principal__modify__change--item'>
-        //             <label for='img_principal'>Imagen derecha:</label>
-        //             // <img src='data:image/png;base64,${object.img_right}' alt=''>
-        //             <input name='img_right' name='img_right' type='file' >
-        //             <p id="response" ></p>
-        //         </div>
-        //         <div class='principal__modify__change--item'>
-        //             <label for='img_principal'>Imagen abajo:</label>
-        //             // <img src='data:image/png;base64,${object.img_bottom}' alt=''
-        //             <input name='img_bottom' type='file' >
-        //             <p id="response" ></p>
-        //         </div>
-        //         <div class='principal__modify__change--item'>
-        //             <label for='img_principal'>imagen izquierda:</label>
-        //             // <img src='data:image/png;base64,${object.img_left}' alt=''>
-        //             <input name='img_left' type='file' >
-        //             <p name="response" ></p>
-        //             </div>
-
-        //             <input type="text" name="texto" >
-
-        //         <input type="submit" value="Modificar Imágenes">
-
-        //     </form>
-        // </div>
-        // `//aqui va texto plano html
-
         modificarHtml += `
         
         <div class="principal__modify__response--container" >
@@ -152,6 +86,41 @@ function writeHtml(array){
                 <input type="button" class="button_modify" value="Modificar" onclick="upDate('price')">
                 <!-- <p id="response" ></p> -->
             </div>
+
+            <form class='container--img' action="http://localhost/Aprendiendo%20A%20Crear%20API/propio/modifyImg.php" method="post" enctype='multipart/form-data' >
+                <div class='principal__modify__change--item'>
+                    <label class="feature" for='img_principal'>Imagen principal:</label>
+                    <img class="image" src='data:image/png;base64,${object.img_principal}' alt='${object.title}'>
+                    <input name='img_principal' type='file' accept=".png, .jpg, .jpeg, .gif" class="input_file" required>
+                    <!-- <p id="response" ></p></div> -->
+                </div>
+                <div class='principal__modify__change--item'>
+                    <label class="feature" for='img_principal'>Imagen arriba:</label>
+                    <img class="image" src='data:image/png;base64,${object.img_top}' alt='${object.title}'>
+                    <input name='img_top' type='file' accept=".png, .jpg, .jpeg, .gif" class="input_file">
+                    <!-- <p id="response" ></p> -->
+                </div>
+                <div class='principal__modify__change--item'>
+                    <label class="feature" for='img_principal'>Imagen derecha:</label>
+                    <img class="image" src='data:image/png;base64,${object.img_right}' alt='${object.title}'>
+                    <input name='img_right' name='img_right' type='file' accept=".png, .jpg, .jpeg, .gif" class="input_file">
+                    <!-- <p id="response" ></p> -->
+                </div>
+                <div class='principal__modify__change--item'>
+                    <label class="feature" for='img_principal'>Imagen abajo:</label>
+                    <img class="image" src='data:image/png;base64,${object.img_bottom}' alt='${object.title}'>
+                    <input name='img_bottom' type='file' accept=".png, .jpg, .jpeg, .gif" class="input_file">
+                    <!-- <p id="response" ></p> -->
+                </div>
+                <div class='principal__modify__change--item'>
+                    <label class="feature" for='img_principal'>imagen izquierda:</label>
+                    <img class="image" src='data:image/png;base64,${object.img_left}' alt='${object.title}'>
+                    <input name='img_left' type='file' accept=".png, .jpg, .jpeg, .gif" class="input_file">
+                    <!-- <p name="response" ></p> -->
+                </div>
+                <input name="id" id='id_element' type='text' value='${object.id}'> <!--  permite obtener el id del elemento a modificar cuando se envia la peticion al servidor.-->
+                <input onclick='modifyImg()' class="button" type="submit" value="Modificar Imágenes" formtarget="_blank">
+            </form>
         </div>
         `
         showResponse(modificarHtml)
@@ -162,9 +131,10 @@ function upDate(feature){
     
     //obtener la caracteristica y su valor a modificar
     const inputChangeValue = document.querySelector(`#modify_${feature}`).value
-    const pValue = document.querySelector(`#show--${feature}`).value
+    // const pValue = document.querySelector(`#show--${feature}`).value
+    const idValue = document.querySelector("#id_element").value
     // showResponse(`${inputChangeValue} -- ${feature}`)
-    console.log(`original feature: ${pValue} feature to change: ${inputChangeValue} -- feature: ${feature}`)
+    console.log(`id: ${idValue} feature to change: ${inputChangeValue} -- feature: ${feature}`)
 
     //enviar la peticion al servidor y obtener una respuesta
     function upDateApi(){
@@ -174,7 +144,8 @@ function upDate(feature){
             const url = "http://localhost/Aprendiendo%20A%20Crear%20API/propio/modify.php"
             let data = new FormData()
             data.append('feature', feature)
-            data.append('featureOriginal', `${pValue}`)
+            // data.append('featureOriginal', `${pValue}`)
+            data.append('id', `${idValue}`)
             data.append('featureChange', `${inputChangeValue}`)
             const req = new XMLHttpRequest()
             
@@ -195,8 +166,8 @@ function upDate(feature){
                 
                 //notificarle al cliente el éxito de la operación.
                 console.log(response)
-                search() ,1500 
-            })
+                search() 
+            },3000 )
         })
         .catch(error => console.error(error))
 }
@@ -204,4 +175,14 @@ function showResponse(response){
 
     const input = document.querySelector(".principal__modify--response")
     input.innerHTML = response
+}
+
+function modifyImg(){
+
+    setTimeout( () => {
+                
+        //notificarle al cliente el éxito de la operación.
+        // console.log(response)
+        search() 
+    },3000 )
 }
