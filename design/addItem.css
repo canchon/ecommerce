@@ -1,0 +1,136 @@
+.principal--add{
+
+    padding: 20px;
+    background-color: white;
+    opacity: 0.9;
+    margin: 15px 10px 15px 30px;
+    overflow: hidden;
+    width: 25%;
+}
+.principal--add > h2{
+
+    margin: 0;
+    text-align: start;
+}
+#form{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.principal__add--input{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.title{
+
+    transition: 500ms;
+    border: lightgray solid 1px;
+    border-radius: 2px;
+    outline: none;
+    width: 250px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+.title:focus{
+
+    background-color: #2de233;
+}
+.description{
+
+    margin-bottom: 20px;
+    outline: none;
+    transition: 500ms;
+    border: lightgray solid 1px;
+    width: 250px;
+    height: 30px;
+    resize: none;
+}
+/* .description:focus{
+
+    height: 200px;
+    background-color: #2de233;
+
+} */
+.categorie{
+
+    margin-bottom: 20px;
+    transition: 500ms;
+    border: lightgray solid 1px;
+    border-radius: 2px;
+    outline: none;
+    width: 250px;
+    height: 30px;
+}
+.categorie:focus{
+
+    background-color: #2de233;
+}
+.price{
+
+    margin-bottom: 20px;
+    transition: 500ms;
+    border: lightgray solid 1px;
+    border-radius: 2px;
+    outline: none;
+    width: 250px;
+    height: 30px;
+}
+.price:focus{
+
+    background-color: #2de233;
+}
+.img{
+
+    /* color: transparent; */
+    text-align: end;
+    margin-bottom: 20px;
+    transition: 500ms;
+    border: lightgray solid  1px;
+    border-radius: 2px;
+    width: 280px;
+    height: 30px;
+    cursor: pointer;
+}
+.img::-webkit-file-upload-button {
+    
+    visibility: hidden;
+}
+.img::before{
+    
+    margin: 6px 0px 0px 60px;
+    position: absolute;
+    content: 'Subir';
+    color: black;
+    letter-spacing: 1px;
+    transition: 500ms;
+}
+.img:hover{
+
+    background-color: #2de233 ;
+}
+.img::selection{
+
+    background-color: #2de233 ;
+
+}
+
+.button{ /*modifica los input type button*/
+
+    letter-spacing: 2px;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 7px 15px;
+    border-radius: 2px;
+    background-color: #2de233 ;
+    margin: 4px 0px;
+}
+.button:hover{
+   
+    cursor: pointer;
+  }

@@ -3,29 +3,17 @@
     color: #2de233;
 }
 body{
+    
+    background-image: url("../src/playa.jpg");
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color:lightcoral ;
 }
 .principal{
-    border: 1px greenyellow solid;
+
+    height: 49rem;
     display: flex;
-}
-.container{
-    border: 1px greenyellow solid;
-    height: 650px;
-    width: 60%;
-}
-#form{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-.principal--modify{
-    border: 1px greenyellow solid;
-    width: 20% !important;
+    overflow: hidden;
 }

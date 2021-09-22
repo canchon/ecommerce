@@ -3,8 +3,10 @@
   color: #2de233;
 }
 body {
-  /* background-image: url("../src/playa.jpg"); */
-  background-color: lightgrey;
+  
+  background-image: url("../src/playa.jpg");
+  background-repeat: no-repeat;
+  /* background-color:oldlace; */
   margin: 0;
   border: 0;
   padding: 0;
@@ -33,6 +35,10 @@ body {
   padding: 15px;
   box-shadow: 0px 0px 40px -24px;
 }
+.left > h2{
+
+  margin: 0;
+}
 
 .shelf {
   width: 80%;
@@ -41,7 +47,7 @@ body {
   box-shadow: 0px 0px 40px -24px;
   background-color: white;
   opacity: 0.9;
-  overflow: scroll;
+  overflow-y: scroll;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
