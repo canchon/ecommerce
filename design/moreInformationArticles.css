@@ -1,36 +1,137 @@
 body{
+
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color:lightslategrey ;
-    align-items: center;
+    background-image: url(../src/rick_y_morty.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: space-evenly;
+}
+.principal{
+
+    margin: 15px 30px 15px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background:white;
+    opacity: 0.9;
+    padding: 20px;
+    /* overflow-y: scroll; */
+    overflow-x: hidden;
 }
 .cabecera{
-    width: 100%;
-    border:maroon solid 1px;
+
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    border: lightgray solid 1px;
+    border-radius: 2px;
     height: 9rem;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    overflow: hidden;
 }
 .cabecera--img{
-    border:maroon solid 1px;
-    /* height: 700px; */
+
+    /* width: 19%; */
+    height: 150px;
+    margin: 0px 5px;
+    border: lightgray solid 1px;
+    border-radius: 2px;
 }
-.imgPrincipal{
-    border:maroon solid 1px;
-    width: 70%;
-    height: 600px;
-}
-.information{
-    border:maroon solid 1px;
+.img{
+
     width: 100%;
-    height: 400px;
+    height: inherit;
+    object-fit: cover;
+}
+.cabecera--img:hover{
+
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 3px;
+}
+.principal_center{
+
+    margin: 15px 30px 15px 30px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.principal_center img{
+
+    width: 70%;
+}
+.principal_center_information{
+
+    padding: 15px;
+    width: 26%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: lightgray solid 1px;
+    border-radius: 2px;
+}
+.principal_center_information_details{
+
+    width: 100%;
+}
+#exhibit_categorie{
+
+    margin: 0px 0px;
+    text-align: start;
+    font-size: 13px;
+}
+#exhibit_title{
+
+    margin: 30px 0px;
 }
 .toPay{
-    border:maroon solid 1px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 70%;
 }
-.footer{
-    border:maroon solid 1px;
+.inputToPay{
+
+    transition: 500ms;
+    border: lightgray solid 1px;
+    border-radius: 2px;
+    outline: none;
+    width: 250px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+.inputToPay:focus{
+
+    background: #2de233;
+}
+.button{
+
+    letter-spacing: 2px;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 7px 15px;
+    border-radius: 2px;
+    background-color: #2de233 ;
+    margin: 4px 0px;
+    cursor: pointer;
+}
+
+.information{
+
+    overflow-x: auto;
+    padding: 20px;
+    border: lightgray solid 1px;
+    border-radius: 2px;
+}
+#show_description{
+
+    margin: 0;
+    font-size: 18px;
 }

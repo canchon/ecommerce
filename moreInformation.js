@@ -1,4 +1,3 @@
-function moreInformation(){
-
+function zoom(){
 
 }

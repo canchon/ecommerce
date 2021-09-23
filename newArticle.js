@@ -1,5 +1,4 @@
 //obtener argumento de búsqueda
-
 const inputSearchValue = () => document.querySelector("#search").value
 
 //enviar una petición a la Api para retornar el elemento que coincida
@@ -48,7 +47,7 @@ function writeHtml(array){
     let modificarHtml
     for (const object of array) {
         
-        modificarHtml += `
+        modificarHtml = `
         
         <div class="principal__modify__response--container" >
 
@@ -127,7 +126,7 @@ function writeHtml(array){
     }
 }
 
-function upDate(feature){
+function upDate(feature){   
     
     //obtener la caracteristica y su valor a modificar
     const inputChangeValue = document.querySelector(`#modify_${feature}`).value

@@ -2,31 +2,97 @@
     <head>
         <meta charset="UTF-8">
         <title>Título del Artículo - Ecomer</title>
-        <link rel="stylesheet" href="./moreInformationArticles.css">
+        <link rel="stylesheet" href="./design/header.css">
+        <link rel="stylesheet" href="./design/moreInformationArticles.css">
+        <link rel="stylesheet" href="./design/footer.css">
     </head>
     <body>
-        <header class="header">Cosas que van en cabecera</header>
-        <div class="cabecera">
-            <div class="cabecera--img">
-                <img src="" alt="Imagen descriptiva del producto">
+        <script defer src="./moreInformation.js" ></script>
+        <header class="header" style="height: 7rem;">
+
+            <div class="header--cabecera">
+
+                <div class="header__cabecera--logo">
+    
+                    <h1>ECOMMERCE</h1>
+                    <p>SIEMPRE A BAJO COSTO</p>
+                </div>
+                <div class="header__cabecera--contact">
+                    
+                    <div class="header__cabecera--name">
+    
+                        <P>Mílton David Canchón Arboleda</P>
+                    </div>
+                    <div class="header__cabecera__contact--email" >
+                        
+                        <h7>Correo:</h7>
+                        <p>milon359265@gmail.com</p>
+                    </div>
+                    <div class="header__cabecera__contact--whatsapp" >
+                        
+                        <img src="https://i.postimg.cc/4xnfTVGC/whatsapp.png" alt="WhatsApp">
+                        <p>3167551478</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="imgPrincipal">
-            <img src="" alt="La misma imagen seleccionada de arriba pero más grande">
-            <h4 id="show_title" >Título del artículo</h4>
-        </div>  
-        <section class="information">
-            <p id="show_description" >description</p>
-            <p id="show_categories" >categories</p>
-            <p id="show_price" >price</p>
+        </header>
+        <section class="principal">
+
+            <div class="cabecera">
+
+                <div class="cabecera--img">
+
+                    <img class="img" onclick="zoom()" src="./src/playa.jpg" alt="Imagen descriptiva del producto">
+                </div>
+                <div class="cabecera--img">
+
+                    <img class="img" onclick="zoom()" src="./src/playa.jpg" alt="Imagen descriptiva del producto">
+                </div>
+                <div class="cabecera--img">
+
+                    <img class="img" onclick="zoom()" src="./src/playa.jpg" alt="Imagen descriptiva del producto">
+                </div>
+                <div class="cabecera--img">
+
+                    <img class="img" onclick="zoom()" src="./src/playa.jpg" alt="Imagen descriptiva del producto">
+                </div>
+                <div class="cabecera--img">
+
+                    <img class="img" onclick="zoom()" src="./src/playa.jpg" alt="Imagen descriptiva del producto">
+                </div>
+            </div>
+            <div class="principal_center">
+
+                <img src="./src/camara.jpg" alt="La misma imagen seleccionada de arriba pero más grande">
+                <section class="principal_center_information">
+
+                    <div class="principal_center_information_details">
+                        
+                        <p id="exhibit_categorie">${element.categoia}</p> <hr>
+                        <h3 id="exhibit_title">${element.price}</h3>
+                    </div>
+                    <div class="toPay">
+                        
+                        <label >Precio:</label>
+                        <input class="inputToPay" id="price" type="text" value="${element.price}" readonly>
+                        <label for="descount_coupon">Porcentaje de descuento:</label>
+                        <input class="inputToPay" id="descount_coupon" type="number" min="0" max="100">
+                        <label for="shipping_cost">Costos de envio:</label>
+                        <input class="inputToPay" id="shipping_cost" type="number" min="0" maxlength="6">
+                        <label >Total:</label>
+                        <input class="inputToPay" id="total" type="text" value="${total}" readonly>
+                        <button class="button" >Comprar</button>
+                    </div>
+                </section>
+            </div>  
+            <div class="information">
+                <p id="exhibit_categorie" style="font-size: 16px;" >${element.description}:</p> <hr>
+                <p id="show_description" >${description}dddddddddddddddddddddddddddddddddddddddddddddddddddddddssssssssssss
+                    sssssssdsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+                    ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssddddddddddsdddddddddddddddddddddddddddddddddddddddddd
+                    ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+            </div>
         </section>
-        <div class="toPay">
-            <label for="descount_coupon">Aplica cupón de descuento</label>
-            <input id="descount_coupon" type="text">
-            <label for="shipping_cost">Agrega costos de envio</label>
-            <input id="shipping_cost" type="number">
-            <button>Comprar</button>
-        </div>
         <footer class="footer">Cosas que van en el footer, Desarrollado por Mílton Canchón.</footer>
     </body>
 </html>
