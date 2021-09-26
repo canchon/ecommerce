@@ -22,7 +22,7 @@ const fetchData = (url, method, featureInput, featureOutput) => {
 }
 
 //darle una respuesta al cliente    
-const search = async() =>{
+const search = async() =>{  //función que busca un elemento por su título, es llamada con 'onclick'
     
     try {
         
@@ -136,50 +136,51 @@ function upDate(feature){
     console.log(`id: ${idValue} feature to change: ${inputChangeValue} -- feature: ${feature}`)
 
     //enviar la peticion al servidor y obtener una respuesta
-    function upDateApi(){
+function upDateApi(){
+    
+    return new Promise( (resolve, reject) =>{
         
-        return new Promise( (resolve, reject) =>{
-            
-            const url = "http://localhost/Aprendiendo%20A%20Crear%20API/propio/modify.php"
-            let data = new FormData()
-            data.append('feature', feature)
-            // data.append('featureOriginal', `${pValue}`)
-            data.append('id', `${idValue}`)
-            data.append('featureChange', `${inputChangeValue}`)
-            const req = new XMLHttpRequest()
-            
-            req.open("post", url)
-                req.onload = () => {
-                    
-                    (req.status === 200)
-                    ? resolve(req.responseText)
-                    : reject(req.error)
-                }
+        const url = "http://localhost/Aprendiendo%20A%20Crear%20API/propio/modify.php"
+        let data = new FormData()
+        data.append('feature', feature)
+        // data.append('featureOriginal', `${pValue}`)
+        data.append('id', `${idValue}`)
+        data.append('featureChange', `${inputChangeValue}`)
+        const req = new XMLHttpRequest()
+        
+        req.open("post", url)
+            req.onload = () => {
+                
+                (req.status === 200)
+                ? resolve(req.responseText)
+                : reject(req.error)
+            }
             req.send(data)
-            })
+        })
     }
     upDateApi()
-        .then(response => {
+    .then(response => {
+        
+        setTimeout( () => {
             
-            setTimeout( () => {
-                
-                //notificarle al cliente el éxito de la operación.
-                console.log(response)
-                search() 
-            },3000 )
-        })
-        .catch(error => console.error(error))
+            //notificarle al cliente el éxito de la operación.
+            console.log(response)
+            search() 
+        },3000 )
+    })
+    .catch(error => console.error(error))
 }
-function showResponse(response){
 
+function showResponse(response){
+    
     const input = document.querySelector(".principal__modify--response")
     input.innerHTML = response
 }
 
 function modifyImg(){
-
+    
     setTimeout( () => {
-                
+        
         //notificarle al cliente el éxito de la operación.
         // console.log(response)
         search() 

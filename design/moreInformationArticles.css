@@ -62,6 +62,7 @@ body{
 }
 .principal_center img{
 
+    object-fit: cover;
     width: 70%;
 }
 .principal_center_information{
