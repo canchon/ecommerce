@@ -49,6 +49,10 @@
     width: 250px;
     height: 30px;
 }
+.featureOriginal:focus{
+
+    background: #2de233;
+}
 .input{
     
     transition: 500ms;
@@ -105,7 +109,7 @@
 .container--img{ /*form*/
 
     width: 80%;
-    /* border: gold solid 1px; */
+    border: lightgray solid 1px;
     padding: 15px;
     display: flex;
     flex-direction: column;

@@ -1,4 +1,4 @@
-import fetchElementByFeature from "./fetch.js" // Se encarga de hacer una petición a la Api de buscar un elemento por alguna caracteristica del mismo.
+import fetchElementByFeature from "../plug-in/fetch.js" // Se encarga de hacer una petición a la Api de buscar un elemento por alguna caracteristica del mismo.
 
 //obtener argumento de búsqueda
 const inputSearchValue = () => document.querySelector("#search").value
@@ -10,9 +10,11 @@ const search = async() =>{  //función que busca un elemento por su título, es 
         showResponse("Buscando...") 
         const response = await fetchElementByFeature("title", inputSearchValue())
         if(response == 0){
+
             showResponse("elemento no existe")
         }
         else{
+
             writeHtml(JSON.parse(response))
         }
     }
@@ -20,7 +22,6 @@ const search = async() =>{  //función que busca un elemento por su título, es 
         console.error(error)
     }
 } 
-
 function writeHtml(array){
     
     let modificarHtml
@@ -48,20 +49,18 @@ function writeHtml(array){
             
                 <label class="feature" for='categorie'>Categoria:</label>
                 <textarea id="show--categorie" class="featureOriginal" readonly>${object.categorie}</textarea>
-                <!-- <p class="featureOriginal" id="show--categorie" >${object.categorie}</p> -->
                 <input id='modify_categorie' class='input' type='text' placeholder="Nueva categoria" maxlength="30" required>
                 <input type="button" class="button_modify" onclick="upDate('categorie')" value="Modificar" >
             </div>
             <div class='principal__modify__change--item'>
             
                 <label class="feature" for='price'>Precio:</label>
-                <textarea id="show--price" class="featureOriginal" >${object.price}</textarea>
-                <!-- <p class="featureOriginal" id="show--price" >${object.price}</p> -->
-                <input id='modify_price' class='input' type='number' placeholder="Nuevo precio" maxlength="9" required step="10000" min="1000">
+                <textarea id="show--price" class="featureOriginal" readonly>${object.price}</textarea>
+                <input id='modify_price' class='input' type='number' placeholder="Nuevo precio" step="10000" min="1000" required>
                 <input type="button" class="button_modify" onclick="upDate('price')" value="Modificar" >
             </div>
             
-            <form class='container--img' action="http://localhost/Aprendiendo%20A%20Crear%20API/propio/modifyImg.php" method="post" enctype='multipart/form-data' >
+            <form onsubmit="modifyImg()" class='container--img' action="http://localhost/Aprendiendo%20A%20Crear%20API/propio/modifyImg.php" method="post" enctype='multipart/form-data' >
                 <div class='principal__modify__change--item'>
                     <label class="feature" for='img_principal'>Imagen principal:</label>
                     <img class="image" src='data:image/png;base64,${object.img_principal}' alt='${object.title}'>
@@ -70,42 +69,35 @@ function writeHtml(array){
                 <div class='principal__modify__change--item'>
                     <label class="feature" for='img_principal'>Imagen arriba:</label>
                     <img class="image" src='data:image/png;base64,${object.img_top}' alt='${object.title}'>
-                    <input name='img_top' type='file' accept=".png, .jpg, .jpeg, .gif" class="input_file">
+                    <input name='img_top' type='file' accept=".png, .jpg, .jpeg, .gif" class="input_file" required>
                 </div>
                 <div class='principal__modify__change--item'>
                     <label class="feature" for='img_principal'>Imagen derecha:</label>
                     <img class="image" src='data:image/png;base64,${object.img_right}' alt='${object.title}'>
-                    <input name='img_right' name='img_right' type='file' accept=".png, .jpg, .jpeg, .gif" class="input_file">
+                    <input name='img_right' name='img_right' type='file' accept=".png, .jpg, .jpeg, .gif" class="input_file" required>
                 </div>
                 <div class='principal__modify__change--item'>
                     <label class="feature" for='img_principal'>Imagen abajo:</label>
                     <img class="image" src='data:image/png;base64,${object.img_bottom}' alt='${object.title}'>
-                    <input name='img_bottom' type='file' accept=".png, .jpg, .jpeg, .gif" class="input_file">
+                    <input name='img_bottom' type='file' accept=".png, .jpg, .jpeg, .gif" class="input_file" required>
                 </div>
                     <div class='principal__modify__change--item'>
                     <label class="feature" for='img_principal'>imagen izquierda:</label>
                     <img class="image" src='data:image/png;base64,${object.img_left}' alt='${object.title}'>
-                    <input name='img_left' type='file' accept=".png, .jpg, .jpeg, .gif" class="input_file">
+                    <input name='img_left' type='file' accept=".png, .jpg, .jpeg, .gif" class="input_file" required>
                 </div>  
                 <input name="id" id='id_element' type='text' value='${object.id}'> <!--  permite obtener el id del elemento a modificar cuando se envia la peticion al servidor.-->
-                <input onclick='modifyImg()' class="button" type="submit" value="Modificar Imágenes" formtarget="_blank">
+                <input class="button" type="submit" value="Modificar Imágenes" formtarget="_blank">
             </form>
         </div>
         `
         showResponse(modificarHtml)
     }
 }
-
 function upDate(feature){   
     
-    // let feature = 'description'
-    // console.log(upDate.caller)
-    //obtener la caracteristica y su valor a modificar
-    console.log(feature)
     const inputChangeValue = document.getElementById(`modify_${feature}`).value
-    // const pValue = document.querySelector(`#show--${feature}`).value
     const idValue = document.querySelector("#id_element").value
-    // showResponse(`${inputChangeValue} -- ${feature}`)
     console.log(`id: ${idValue} feature to change: ${inputChangeValue} -- feature: ${feature}`)
     
     //enviar la peticion al servidor y obtener una respuesta
@@ -116,7 +108,6 @@ function upDate(feature){
             const url = "http://localhost/Aprendiendo%20A%20Crear%20API/propio/modify.php"
             let data = new FormData()
             data.append('feature', feature)
-            // data.append('featureOriginal', `${pValue}`)
             data.append('id', `${idValue}`)
             data.append('featureChange', `${inputChangeValue}`)
             const req = new XMLHttpRequest()
@@ -137,7 +128,6 @@ function upDate(feature){
         setTimeout( () => {
             
             //notificarle al cliente el éxito de la operación.
-            console.log(response)
             search() 
         },3000 )
     })
@@ -157,16 +147,15 @@ function modifyImg(){
         //notificarle al cliente el éxito de la operación.
         // console.log(response)
         search() 
-    },3000 )
+    },2000 )
 }
 
 setTimeout( () => {
 
     let buttonSearch = document.querySelector('#button_search')
-    console.log(buttonSearch)
     buttonSearch.addEventListener('click', search)
 }, 500)
 
-
+window.modifyImg = modifyImg
 window.upDate = upDate // Defino el scope de la funciones hasta window para que puedan ser llamadas mediante onclick
 window.search = search 

@@ -93,8 +93,7 @@
     color: white;
   }
   .header > menu > a:hover{
-  
-    letter-spacing: 3px;
-    font-size: 18px;
-    text-shadow: #2de233 2px 0px 3px;
+
+    border-top: #2de233 solid 1px;
+    border-bottom: #2de233 solid 1px;
   }

@@ -3,13 +3,14 @@
 
     <meta charset='UTF-8'>
     <title>Ingresa un nuevo artículo</title>
-    <link rel="stylesheet" href="./design/header.css">
-    <link rel='stylesheet' href='./design/addItem.css'>
-    <link rel='stylesheet' href='./design/modifyItem.css'>
-    <link rel='stylesheet' href='./design/newArticle.css'>
-    <link rel="stylesheet" href="./design/footer.css">
+    <link rel="stylesheet" href="../design/header.css">
+    <link rel='stylesheet' href='../design/addItem.css'>
+    <link rel='stylesheet' href='../design/modifyItem.css'>
+    <link rel='stylesheet' href='../design/newArticle.css'>
+    <link rel="stylesheet" href="../design/footer.css">
 </head>
 <body>
+
     <header class='header'>
         
         <div class="header--cabecera">
@@ -39,14 +40,17 @@
         </div>
         <menu>
             
-            <a id="modify" href="./newArticle.html">AÑADIR O MODIFICAR ITEMS</a>
-            <a id="home" href="./index.html">HOME</a>
+            <a id="modify" href="./addModify.html">AÑADIR O MODIFICAR ITEMS</a>
+            <a id="home" href="../home/index.html">HOME</a>
         </menu>
     </header>
     <div class='principal'>
+
         <section class='principal--add'>
+
             <h2>Añadir un nuevo item<hr></h2>
             <form action='http://localhost/Aprendiendo%20A%20Crear%20API/propio/index.php' method='post' enctype='multipart/form-data' id='form'>
+
                 <label for='new_title'>Título:</label>
                 <input name='title' maxlength="26" id='new_title' class="title" type='text' placeholder="..." required>
                 <label for='new_description'>Descripción:</label>
@@ -54,17 +58,17 @@
                 <label for='new_categorie'>Categoria:</label>
                 <input name='categorie' type='text' id='new_categorie' class="categorie" placeholder="..." maxlength="30" required>
                 <label for='new_price' >¿Cuál es el precio?</label>
-                <input name='price' type='number' placeholder="..." id="new_price" class="price" maxlength="9" required step="10000" min="1000">
+                <input name='price' type='number' placeholder="..." id="new_price" class="price" maxlength="9"  step="1" min="1000" required>
                 <label for='img_principal'>Imagen principal</label>
-                <input name='img_principal' class="img" type='file' required >
+                <input name='img_principal' class="img" type='file' required>
                 <label for='img_principal'>Imagen arriba</label>
-                <input name='img_top' class="img" type='file' >
+                <input name='img_top' class="img" type='file' required>
                 <label for='img_principal'>Imagen derecha</label>
-                <input name='img_right' class="img" type='file' >
+                <input name='img_right' class="img" type='file' required>
                 <label for='img_principal'>Imagen abajo</label>
-                <input name='img_bottom' class="img" type='file' >
+                <input name='img_bottom' class="img" type='file' required>
                 <label for='img_principal'>Imagen izquierda</label>
-                <input name='img_left' class="img" type='file' >
+                <input name='img_left' class="img" type='file' required>
                 <input type='submit' class="button" formtarget='_blank' value="Añadir articulo" >
             </form>
         </section>
@@ -82,6 +86,6 @@
         </div>
     </div>
     <footer class='footer'>Cosas que van en el footer, Desarrollado por Mílton Canchón.</footer>
-    <script type="module" src='./newArticle.js' ></script>
+    <script type="module" src='./modifyArticle.js' ></script>
 </body>
 </html>

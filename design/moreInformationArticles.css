@@ -60,13 +60,22 @@ body{
     display: flex;
     justify-content: space-evenly;
 }
-.principal_center img{
+.principal_center_img{
+    
+    overflow: hidden;
+    width: 65%;
+    height: 550px;
+}
+.principal_center_img img{
 
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    width: 70%;
 }
 .principal_center_information{
 
+    overflow-y: auto;
+    height: 550px;
     padding: 15px;
     width: 26%;
     display: flex;
@@ -88,7 +97,7 @@ body{
 }
 #exhibit_title{
 
-    margin: 30px 0px;
+    margin: 50px 0px 30px 0px;
 }
 .toPay{
 
@@ -123,16 +132,34 @@ body{
     margin: 4px 0px;
     cursor: pointer;
 }
+#message{
 
+    text-align: center;
+    resize: none;
+    display: none;
+    margin: 5px 0px;
+    height: 50px;
+}
+#message:focus{
+
+    height: 50px;
+}
 .information{
 
-    overflow-x: auto;
+    overflow-y: auto;
     padding: 20px;
     border: lightgray solid 1px;
     border-radius: 2px;
 }
 #show_description{
 
+    text-align: start;
     margin: 0;
     font-size: 18px;
+}
+#price{
+
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0px 0px 20px 0px;
 }
