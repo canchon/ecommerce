@@ -4,7 +4,8 @@
     background-color: white;
     opacity: 0.9;
     margin: 15px 10px 15px 30px;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     width: 25%;
 }
 .principal--add > h2{
@@ -50,12 +51,11 @@
     height: 30px;
     resize: none;
 }
-/* .description:focus{
+.description:focus{
 
     height: 200px;
     background-color: #2de233;
-
-} */
+}
 .categorie{
 
     margin-bottom: 20px;
@@ -104,7 +104,7 @@
     
     margin: 6px 0px 0px 60px;
     position: absolute;
-    content: 'Subir';
+    /* content: 'Subir'; */
     color: black;
     letter-spacing: 1px;
     transition: 500ms;
