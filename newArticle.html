@@ -10,20 +10,19 @@
     <link rel="stylesheet" href="./design/footer.css">
 </head>
 <body>
-    <script defer src='./newArticle.js' ></script>
     <header class='header'>
-            
+        
         <div class="header--cabecera">
-
+            
             <div class="header__cabecera--logo">
-
+                
                 <h1>ECOMMERCE</h1>
                 <p>SIEMPRE A BAJO COSTO</p>
             </div>
             <div class="header__cabecera--contact">
                 
                 <div class="header__cabecera--name">
-
+                    
                     <P>Mílton David Canchón Arboleda</P>
                 </div>
                 <div class="header__cabecera__contact--email" >
@@ -39,7 +38,7 @@
             </div>
         </div>
         <menu>
-
+            
             <a id="modify" href="./newArticle.html">AÑADIR O MODIFICAR ITEMS</a>
             <a id="home" href="./index.html">HOME</a>
         </menu>
@@ -70,17 +69,19 @@
             </form>
         </section>
         <div class='principal--modify'>
-
+            
             <h2>Modificar artículos<hr></h2>
             <label for='search'>Buscar por:</label>
             <input id='search' class="title" type='search' placeholder='Título'>
-            <button onclick='search()' class="button" >Buscar</button>
-
+            <input type="button" id="button_search" class="button" value="Buscar" onclick="search()"></input>
+            
             <div class='principal__modify--response' >
-
+                
+                
             </div>
         </div>
     </div>
     <footer class='footer'>Cosas que van en el footer, Desarrollado por Mílton Canchón.</footer>
+    <script type="module" src='./newArticle.js' ></script>
 </body>
 </html>
