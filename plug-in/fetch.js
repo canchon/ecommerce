@@ -1,13 +1,17 @@
-const fetchElementByFeature = (feature, searchParameter) => {
+const fetch = (module, accion, parameters) => {
     
     return new Promise( (resolve, reject) =>{
         
-        const url = "http://localhost/Aprendiendo%20A%20Crear%20API/propio/search.php"
+        const url = "http://localhost/Aprendiendo%20A%20Crear%20API/propio/index.php"
+        const json = {
+
+            'module': module,
+            'accion': accion,
+            'parameters': parameters,
+        }
         const data = new FormData()
-        data.append('feature', `${feature}`)
-        data.append('searchParameter', `${searchParameter}`)
+        data.append('json', JSON.stringify(json))
         const req = new XMLHttpRequest()
-        
         req.open("post", url)
         req.onload = () => {
             
@@ -19,4 +23,4 @@ const fetchElementByFeature = (feature, searchParameter) => {
     })
 }
 
-export default fetchElementByFeature
+export default fetch

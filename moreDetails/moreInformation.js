@@ -1,26 +1,23 @@
-import fetchElementByFeature from "../plug-in/fetch.js"
+import fetch from "../plug-in/fetch.js"
 window.opener
 
+const getParameterFromUrl = parameterName => {
 
-function findGetParameter(parameterName) {
+    let array = location.search.substr(1).split('&');
+    let newArray = []
+    for(let i = 0; i<= array.length; i++){
 
-    var result = null,
-        tmp = [];
-    var items = location.search.substr(1).split("&");
-    for (var index = 0; index < items.length; index++) {    
-        tmp = items[index].split("=");
-        if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        newArray = array[i].split('=')
+        if(newArray[0] == parameterName) return decodeURIComponent(newArray[1])
     }
-    return result;
 }
-
-
-let idArticle
 ( () => {
 
-    idArticle = findGetParameter('id');
-    // writeHtml(element)
-    fetchElementByFeature('id', idArticle)
+    fetch('Search', 'searchByFeature', {
+
+        'feature': 'id',
+        'searchParameter': getParameterFromUrl('id'),
+    } )
 
         .then(response => {
          
@@ -96,7 +93,11 @@ function writeHtml(object){
 function zoom(nameImage){ //Amplia la imagen que el cliente seleccione
 
     const img = document.querySelector('#img_principal')
-    fetchElementByFeature('id', idArticle)
+    fetch('Search', 'searchByFeature', {
+
+        'feature': 'id',
+        'searchParameter': getParameterFromUrl('id'),
+    } )
         .then( resolve => {
 
             const element = JSON.parse(resolve)[0]
@@ -104,8 +105,6 @@ function zoom(nameImage){ //Amplia la imagen que el cliente seleccione
         })
         .catch( error => console.error(error))
 }
-//
-window.zoom = zoom
 
 function showPriceTotal(){
 
@@ -118,7 +117,7 @@ setTimeout( () => {
     buttonBuy.addEventListener('click', showMesage)
     const buttonCalcPriceTotal = document.getElementById('buttonCalcPriceTotal')
     buttonCalcPriceTotal.addEventListener('click', showPriceTotal)
-} ,2000)
+} ,1000)
     
 const calcTotal = () => {
 
@@ -136,5 +135,4 @@ const showMesage = () => {
     inputShowMessage.style.display = 'block'
 }
 
-
-
+window.zoom = zoom

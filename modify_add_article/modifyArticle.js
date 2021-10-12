@@ -1,15 +1,17 @@
-import fetchElementByFeature from "../plug-in/fetch.js" // Se encarga de hacer una petición a la Api de buscar un elemento por alguna caracteristica del mismo.
+import fetch from "../plug-in/fetch.js" // Se encarga de hacer la petición a la API
 
-//obtener argumento de búsqueda
-const inputSearchValue = () => document.querySelector("#search").value
-
+const inputSearchValue = () => document.querySelector("#search").value//obtener argumento de búsqueda
 const search = async() =>{  //función que busca un elemento por su título, es llamada con 'onclick'
     
     try {
         
         showResponse("Buscando...") 
-        const response = await fetchElementByFeature("title", inputSearchValue())
-        if(response == 0){
+        const response = await fetch('Search', 'searchByFeature', {
+
+            'feature': 'title', //esta característica es la que se necesita, pero la API puede recibir cualquier otra caractrística
+            'searchParameter': inputSearchValue(),
+        })
+        if(JSON.parse(response)[0] == '0'){
 
             showResponse("elemento no existe")
         }
@@ -19,6 +21,7 @@ const search = async() =>{  //función que busca un elemento por su título, es 
         }
     }
     catch (error) {
+
         console.error(error)
     }
 } 
@@ -98,40 +101,20 @@ function upDate(feature){
     
     const inputChangeValue = document.getElementById(`modify_${feature}`).value
     const idValue = document.querySelector("#id_element").value
-    console.log(`id: ${idValue} feature to change: ${inputChangeValue} -- feature: ${feature}`)
+    // console.log(`id: ${idValue} feature to change: ${inputChangeValue} -- feature: ${feature}`)
     
-    //enviar la peticion al servidor y obtener una respuesta
-    function upDateApi(){
+    fetch('Modify', 'upDateFeatureItem' , {
+
+        'feature': feature,
+        'id': idValue,
+        'featureChange': inputChangeValue
+    })
+        .then( response => setTimeout( () => {
         
-        return new Promise( (resolve, reject) =>{
-            
-            const url = "http://localhost/Aprendiendo%20A%20Crear%20API/propio/modify.php"
-            let data = new FormData()
-            data.append('feature', feature)
-            data.append('id', `${idValue}`)
-            data.append('featureChange', `${inputChangeValue}`)
-            const req = new XMLHttpRequest()
-            
-            req.open("post", url)
-            req.onload = () => {
-                
-                (req.status === 200)
-                ? resolve(req.responseText)
-                : reject(req.error)
-            }
-            req.send(data)
-        })
-    }
-    upDateApi()
-    .then(response => {
-        
-        setTimeout( () => {
-            
             //notificarle al cliente el éxito de la operación.
             search() 
-        },3000 )
-    })
-    .catch(error => console.error(error))
+        },3000 ) )
+        .catch( error => console.error(error) )
 }
 
 function showResponse(response){
@@ -141,6 +124,8 @@ function showResponse(response){
 }
 
 function modifyImg(){
+
+    fetch('')
     
     setTimeout( () => {
         
@@ -150,12 +135,7 @@ function modifyImg(){
     },2000 )
 }
 
-setTimeout( () => {
-
-    let buttonSearch = document.querySelector('#button_search')
-    buttonSearch.addEventListener('click', search)
-}, 500)
-
+// Defino el scope de la funciones hasta window para que puedan ser llamadas mediante onclick
 window.modifyImg = modifyImg
-window.upDate = upDate // Defino el scope de la funciones hasta window para que puedan ser llamadas mediante onclick
+window.upDate = upDate 
 window.search = search 

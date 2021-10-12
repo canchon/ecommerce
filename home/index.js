@@ -1,20 +1,5 @@
-const fetchData = () => {
+import fetch from "../plug-in/fetch.js"
 
-    return new Promise( (resolve, reject) =>{
-        
-        const url = "http://localhost/Aprendiendo%20A%20Crear%20API/propio/index.php"
-        const connection = new XMLHttpRequest()
-        connection.open('get',url, true)
-        connection.onreadystatechange = function(){
-            if(connection.readyState === 4){
-                (connection.status === 200)
-                    ? resolve(connection.responseText)
-                    : reject(connection.error) 
-            }
-        }
-        connection.send()
-    } )
-}
 function makeItems(object){
 
     const shelf = document.querySelector(".shelf")
@@ -41,7 +26,7 @@ function makeItems(object){
 
     try{
 
-        const response = await fetchData()
+        const response = await fetch('Get', 'getAllItems', '0')
         makeItems(JSON.parse(response))
     }
     catch (error){
@@ -51,10 +36,9 @@ function makeItems(object){
 })()
 
 //código que despliega la otra pestaña con la información del articulo seleccionado.
-function moreInformation(idElement){
+function moreInformation(idElement){ // es llamada con onclick
 
-    let id = idElement
-    window.location.replace("http://127.0.0.1:5500/moreDetails/moreInformationArticles.html?id=" + id)
+    window.location.replace("http://127.0.0.1:5500/moreDetails/moreInformationArticles.html?id=" + idElement)
 }
 
 //Extiendo el ambito de las funcniones para que puedan ser llamadas mediante onclick
