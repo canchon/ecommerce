@@ -12,15 +12,13 @@ const getParameterFromUrl = parameterName => {
     }
 }
 ( () => {
-
-    fetch('Search', 'searchByFeature', {
-
+    fetch('Ecommerce', 'searchByFeature', {
         'feature': 'id',
         'searchParameter': getParameterFromUrl('id'),
     } )
 
         .then(response => {
-         
+            console.log(response)
             writeHtml(JSON.parse(response))
         })
         .catch( error => console.error('Ha ocurrido un error con el servidor', error))
@@ -93,7 +91,7 @@ function writeHtml(object){
 function zoom(nameImage){ //Amplia la imagen que el cliente seleccione
 
     const img = document.querySelector('#img_principal')
-    fetch('Search', 'searchByFeature', {
+    fetch('Ecommerce', 'searchByFeature', {
 
         'feature': 'id',
         'searchParameter': getParameterFromUrl('id'),

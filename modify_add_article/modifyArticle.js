@@ -6,7 +6,7 @@ const search = async() =>{  //función que busca un elemento por su título, es 
     try {
         
         showResponse("Buscando...") 
-        const response = await fetch('Search', 'searchByFeature', {
+        const response = await fetch('Ecommerce', 'searchByFeature', {
 
             'feature': 'title', //esta característica es la que se necesita, pero la API puede recibir cualquier otra caractrística
             'searchParameter': inputSearchValue(),
@@ -103,7 +103,7 @@ function upDate(feature){
     const idValue = document.querySelector("#id_element").value
     // console.log(`id: ${idValue} feature to change: ${inputChangeValue} -- feature: ${feature}`)
     
-    fetch('Modify', 'upDateFeatureItem' , {
+    fetch('Ecommerce', 'upDateFeatureItem' , {
 
         'feature': feature,
         'id': idValue,

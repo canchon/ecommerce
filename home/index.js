@@ -1,7 +1,6 @@
 import fetch from "../plug-in/fetch.js"
 
 function makeItems(object){
-
     const shelf = document.querySelector(".shelf")
     shelf.innerHTML = ""
     for (const element of object) {
@@ -23,21 +22,17 @@ function makeItems(object){
     }
 }
 (async () => {
-
     try{
-
-        const response = await fetch('Get', 'getAllItems', '0')
+        const response = await fetch('Ecommerce', 'getAllItems', '0')
         makeItems(JSON.parse(response))
     }
     catch (error){
-
         console.error(error)
     }
 })()
 
 //código que despliega la otra pestaña con la información del articulo seleccionado.
 function moreInformation(idElement){ // es llamada con onclick
-
     window.location.replace("http://127.0.0.1:5500/moreDetails/moreInformationArticles.html?id=" + idElement)
 }
 
