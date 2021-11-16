@@ -2,7 +2,7 @@ const fetch = (module, accion, parameters) => {
     
     return new Promise( (resolve, reject) =>{
         
-        const url = "http://localhost/Aprendiendo%20A%20Crear%20API/propio/index.php"
+        const url = "https://serverall.000webhostapp.com/"
         const json = {
 
             'module': module,
