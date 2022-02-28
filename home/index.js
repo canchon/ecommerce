@@ -33,7 +33,7 @@ function makeItems(object){
 
 //código que despliega la otra pestaña con la información del articulo seleccionado.
 function moreInformation(idElement){ // es llamada con onclick
-    window.location.replace("http://127.0.0.1:5500/moreDetails/moreInformationArticles.html?id=" + idElement)
+    window.location.replace("https://canchon.github.io/ecommerce/moreDetails/moreInformationArticles.html?id=" + idElement)
 }
 
 //Extiendo el ambito de las funcniones para que puedan ser llamadas mediante onclick
